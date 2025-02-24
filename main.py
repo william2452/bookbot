@@ -1,6 +1,12 @@
+import sys
+
 def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    
     word_count = 0
-    with open("books/frankenstein.txt") as f:
+    with open(sys.argv[1]) as f:
         file_contents = f.read()
 
         #Uses the string split function to count the number of words in the text.
